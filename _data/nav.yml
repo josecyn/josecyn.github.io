@@ -1,0 +1,14 @@
+nav_list_title: Navigation List
+links:
+
+- title: About
+  url: about.html
+
+- title: Portfolio
+  url: access.html
+
+- title: Resume
+  url: /assets/pdf/resume.pdf
+
+- title: Contact me!
+  url: mailto:josecarlosyn@gmail.com

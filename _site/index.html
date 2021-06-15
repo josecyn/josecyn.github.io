@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  The above 2 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+ -->
+<title>Home</title>
+<!-- Set the base URL for all relative URLs within the document -->
+<base href="http://localhost:4000/">
+
+<!--
+  Allows control over where resources are loaded from.
+  Place as early in the <head> as possible, as the tag  
+  only applies to resources that are declared after it.
+-->
+
+<!-- Short description of the document (limit to 150 characters) -->
+<!-- This content *may* be used as a part of search engine results. -->
+<meta name="description" content="">
+
+<!-- Control the behavior of search engine crawling and indexing -->
+<meta name="robots" content="index,follow"><!-- All Search Engines -->
+<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+<!-- Verify website ownership -->
+<meta name="google-site-verification" content=""><!-- Google Search Console -->
+<meta name="yandex-verification" content=""><!-- Yandex Webmasters -->
+<meta name="msvalidate.01" content=""><!-- Bing Webmaster Center -->
+<meta name="alexaVerifyID" content=""><!-- Alexa Console -->
+<meta name="p:domain_verify" content=""><!-- Pinterest Console-->
+<meta name="norton-safeweb-site-verification" content=""><!-- Norton Safe Web -->
+
+<!-- Allows control over how referrer information is passed -->
+<meta name="referrer" content="no-referrer">
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=true">
+
+<!-- Completely opt out of DNS prefetching by setting to "off" -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- Geo tags -->
+<!-- meta name="ICBM" content="latitude, longitude"-->
+<!-- meta name="geo.position" content="latitude;longitude"-->
+<!-- meta name="geo.region" content="country[-state]"><Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
+<!-- meta name="geo.placename" content="city/town"><eg. content="New York City" -->
+
+<!-- Link to an external CSS file -->
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Courgette&family=Lobster&family=Pacifico&family=Yellowtail&family=Noto+Sans+JP:wght@400;900&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+<!-- BootStrap CDN --> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://kit.fontawesome.com/32a2b2a489.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+
+<!--  GIT TALK CDN  for comment system -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+
+
+<!-- Provides information about an author or another person -->
+<link rel="me" href="mailto:josecarlosyn@gmail.com">
+<link rel="me" href="sms:+">
+
+<!-- Open Search -->
+<!-- link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title" -->
+
+<!-- Feeds -->
+<!-- link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS" -->
+<!-- link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3" -->
+
+<!-- For IE 10 and below -->
+<!-- Place favicon.ico in the root directory - no tag necessary -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+
+<meta property="fb:app_id" content="">
+<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Home, ">
+<meta property="og:image" content="/assets/img/dumbarton.png">
+<meta property="og:image:alt" content="Jose Carlos Portfolio">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Home">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Jose Carlos Yanez">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:url" content="http://localhost:4000/">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="/assets/img/dumbarton.png">
+<meta name="twitter:image:alt" content="Jose Carlos Portfolio">
+
+<!-- Used for adding in-document CSS -->
+
+
+
+<!-- JavaScript & No-JavaScript tags -->
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!--
+<script>
+    $(document).ready(function() {
+        $(".toast").toast('show');
+    });
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', ');
+</script>
+
+<noscript>
+  <!-- No JS alternative -->
+</noscript>
+  <body style="background-color:;">
+    
+<nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:Poppins;background-color:#10292e;">
+  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#149f98;">Home</h4></a>
+  <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-caret-down"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+              <li class="nav-item">
+                  <a href="about.html" class="nav-link" style="font-family:Poppins;color:#149f98;">About</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="access.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Portfolio</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="/assets/pdf/resume.pdf" class="nav-link" style="font-family:Poppins;color:#149f98;">Resume</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="mailto:josecarlosyn@gmail.com" class="nav-link" style="font-family:Poppins;color:#149f98;">Contact me!</a>
+              </li>
+        
+    </ul>
+    <ul class="navbar-nav  justify-content-end">
+      <li class="nav-item">
+        
+<!-- Displays Social Media Icons based on _config.yml settings -->
+<span style="color:#CCCCCC;">
+    <i> &nbsp;&nbsp; </i>
+    
+    
+        <a href="https://github.com/josecyn">
+        <span style="color: #CCCCCC;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
+    
+    
+        <a href="https://www.linkedin.com/in/josecarlosyn">
+        <span style="color: #CCCCCC;">
+            <i class="fab fa-linkedin fa-lg"></i></a>
+        </span>
+    
+    
+    
+    
+     
+    <i> &nbsp;&nbsp; </i>
+</span>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="dumbarton-spacer-sm"></div>
+    <div class="container">
+      
+
+<!-- ABOUT ME SECTION -->
+<div class="card mx-auto border-0" style="position:relative;background-color:;">
+  <div class="row">
+    <div class="col-md-4">
+      
+        <img src="/assets/img/avatar/cropped.png" class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
+      
+    </div>
+    <!-- EDUCATION SECTION -->
+    <div class="col-md-8">
+      
+      <div class="card-body animate__animated animate__fadeInRight" style="color:;">
+      
+        <p style="color:;"><h3 id="hi-im-jose-carlos-">Hi, I’m Jose Carlos 👋</h3>
+<p>I’m a Software Engineer specialized on Deep Learning with more than 10 years of experience.</p>
+
+<!--a href="mailto:josecarlosyn@gmail.com" class="highlighted">Contact me</a-->
+<p>
+        
+           
+  <h5 class="card-title" style="font-family:Noto Sans JP;font-size:18px;color:;">Education</h5>
+  <ul class="list-unstyled">
+  
+    <li class="media">
+      <img src="/assets/img/icons/2x/75px_UPC.png" width="60" height="60" class="mr-3" alt="UPC">
+      <div class="media-body">
+        <h5 style="font-family:Noto Sans JP;font-size:18px;color:;">Polytechnic University of Catalonia</h5>
+        <p style="font-family:Noto Sans JP;font-size:15px;color:;"><i></i></p>
+        
+          <p>Computer Science Bachelor Degree</p>
+        
+      </div>
+    </li>
+    
+  </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- style="font-family:Poppins;background-color:#10292e; -->
+
+<!-- HOME HIGHLIGHTS SECTION --> 
+
+<div class="card mx-auto animate__animated animate__slideInUp animate__delay-1s glowing-border" style="max-width: 100%;">
+
+  <div class="card-header" style="background-color:#10292e;">
+    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
+      
+        
+          <li class="nav-item">
+            <a class="nav-link shadow-none" id="" href="#exp" role="tab" aria-controls="exp" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Experience</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+              <a class="nav-link" id="" href="#courses" role="tab" aria-controls="courses" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Courses</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+              <a class="nav-link" id="" href="#cert" role="tab" aria-controls="cert" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Certifications & Awards</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+              <a class="nav-link" id="" href="#ref" role="tab" aria-controls="ref" aria-selected="true" style="font-family:Poppins;color:#149f98;"> References</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+  <div class="card-body">          
+      <div class="tab-content mt-3">
+        
+            
+              <div class="tab-pane active overflow-auto" id="exp" role="tabpanel" aria-labelledby="exp-tab">  
+                <p><i>A brief summary of my professional experience.</i></p>
+                
+<ul class="list-unstyled experience_list">
+
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <a href="https://git.resocia.jp/en/"><img src="/assets/img/icons/2x/75px_Human.png" width="60" height="60" class="mr-3" alt=""></a>
+    <div class="media-body justify-content-between">
+      <h5>Human Resocia Co. Ltd.  <small>(Tokyo, Japan, 07/2018 - Present)</small></h5>
+      <em>Deep Learning Engineer</em>
+      <ul>
+      
+        <li style="padding-right: 100px;"><p><p>Since 10/2018 dispatched to a Japanese company in an R&amp;D team.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Responsible for small projects from data labeling to demonstration.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3 and Faster R-CNN.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Developed prototype applications using Python, Android, and C++.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Improved model’s efficiency to run on CPU and Android mobile devices.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Applied quantization techniques using Pytorch.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Led the evaluation of cutting-edge products of international companies.</p>
+</p></li>
+      
+      </ul>
+    </div>
+  </li>
+  
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <a href="https://global.agfahealthcare.com/"><img src="/assets/img/icons/2x/75px_Agfa.png" width="60" height="60" class="mr-3" alt=""></a>
+    <div class="media-body justify-content-between">
+      <h5>Agfa Healthcare GmbH  <small>(Vienna, Austria, 11/2012 - 05/2018)</small></h5>
+      <em>Software Developer</em>
+      <ul>
+      
+        <li style="padding-right: 100px;"><p><p>Introduced JEE Technology stack in the project.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Designed and implemented advanced new features that generated direct revenue such as Outlook synchronization, email/SMS notification, and ICS-Feeds (iCal).</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Introduced CI with automated unit and integration tests.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Worked together with an offshore team in India (Bangalore).</p>
+</p></li>
+      
+      </ul>
+    </div>
+  </li>
+  
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <a href="https://www.everis.com/global/en"><img src="/assets/img/icons/2x/75px_Everis.png" width="60" height="60" class="mr-3" alt=""></a>
+    <div class="media-body justify-content-between">
+      <h5>Everis an NTT DATA Company  <small>(Barcelona, Spain, 09/2009 - 10/2012)</small></h5>
+      <em>Junior Software Engineer</em>
+      <ul>
+      
+        <li style="padding-right: 100px;"><p><p>Implemented JMS and Web Services as part of a JEE application.</p>
+</p></li>
+      
+        <li style="padding-right: 100px;"><p><p>Designed and implemented a reporting web portal in PHP.</p>
+</p></li>
+      
+      </ul>
+    </div>
+  </li>
+  
+</ul>
+
+              </div>
+            
+        
+            
+              <div class="tab-pane overflow-auto" id="courses" role="tabpanel" aria-labelledby="courses-tab">  
+                <p><i>It's very important to keep learning, so for the lasts years, I've been focused on Machine Learning courses.</i></p>
+                <ol>
+    
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="/assets/img/icons/2x/coursera_circle_60.png" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">Machine Learning Engineering (MLOps) Specialization</div>
+          <div class="author"><em>Coursera, 2021</em></div>
+          <div class="links">
+            
+              <a href="https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            
+            
+              <a href="/assets/pdf/certificates/Coursera_W9WYACS625ZX.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            
+          </div>
+      </div>
+    </li>
+    
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="/assets/img/icons/2x/coursera_circle_60.png" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">Machine Learning for Trading Specialization</div>
+          <div class="author"><em>Coursera, 2020</em></div>
+          <div class="links">
+            
+              <a href="https://www.coursera.org/specializations/machine-learning-trading" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            
+            
+              <a href="/assets/pdf/certificates/GRY6SY5LWT69.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            
+          </div>
+      </div>
+    </li>
+    
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="/assets/img/icons/2x/coursera_circle_60.png" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">Machine Learning with TensorFlow on Google Cloud Platform</div>
+          <div class="author"><em>Coursera, 2018</em></div>
+          <div class="links">
+            
+              <a href="https://www.coursera.org/specializations/machine-learning-tensorflow-gcp" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            
+            
+              <a href="/assets/pdf/certificates/Coursera_JSRD7W54YDJL.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            
+          </div>
+      </div>
+    </li>
+    
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="/assets/img/icons/2x/coursera_circle_60.png" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">Deep Learning Specialization</div>
+          <div class="author"><em>Coursera, 2018</em></div>
+          <div class="links">
+            
+              <a href="https://www.coursera.org/specializations/deep-learning" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            
+            
+              <a href="/assets/pdf/certificates/Coursera_A59G8HTW24XB.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            
+          </div>
+      </div>
+    </li>
+    
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="/assets/img/icons/2x/coursera_circle_60.png" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">Deep Learning Foundations</div>
+          <div class="author"><em>Udacity, 2017</em></div>
+          <div class="links">
+            
+              <a href="https://www.udacity.com/course/deep-learning-nanodegree--nd101" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            
+            
+              <a href="/assets/pdf/certificates/Udacity_nd101.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            
+          </div>
+      </div>
+    </li>
+    
+  </div>
+</ol>
+
+            
+        
+            
+              <div class="tab-pane overflow-auto" id="cert" role="tabpanel" aria-labelledby="cert-tab">  
+                <p><i></i></p>
+                
+<ul class="list-unstyled">
+
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <img src="/assets/img/icons/2x/75px_Agfa.png" width="60" height="60" class="mr-3" alt="Agfa Healthcare GmbH">
+    <div class="media-body justify-content-between">
+      <h5>Laureate Product Technology Innovation <small>(Agfa Healthcare GmbH, 06/2016)</small></h5>
+      <p style="padding-right: 4rem; margin-bottom: .25rem;">In my previous company, a contest is organized every year to award innovations and new product developments. I won the product innovation award for a new feature related with patient notification using e-mail and SMS technologies and iCalendar synchronization.  To be able to see patient appointments from outside hospital's network in a secure fashion, was a persistent problem and it   was solved using iCal synchronization. All departments and teams take part into this event.
+</p>
+      
+    </div>
+  </li>
+  
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <img src="/assets/img/icons/2x/75px_Oracle.png" width="60" height="60" class="mr-3" alt="Oracle">
+    <div class="media-body justify-content-between">
+      <h5>Oracle Certified Associate, Java SE 8 Programmer <small>(Oracle, 10/2015)</small></h5>
+      <p style="padding-right: 4rem; margin-bottom: .25rem;">An Oracle Certified Associate, Java SE 8 Programmer has demonstrated knowledge of object-oriented concepts,  the Java programming language and general knowledge of Java platforms and technologies.
+</p>
+      
+          <a class="highlighted" href="https://www.youracclaim.com/badges/d42751a6-32cc-44dd-a9c0-da405ad8af9c" role="button" aria-hidden="true">See more</a>
+      
+    </div>
+  </li>
+  
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <img src="/assets/img/icons/2x/75px_UPC.png" width="60" height="60" class="mr-3" alt="Polytechnic University of Catalonia">
+    <div class="media-body justify-content-between">
+      <h5>Degree's Final Project With Special Distinction <small>(Polytechnic University of Catalonia, 03/2010)</small></h5>
+      <p style="padding-right: 4rem; margin-bottom: .25rem;">Every year, at the Polytechnic University of Catalonia a handful of degree's final projects are rewarded with a special distinction.  In 2010 my project was selected as one of the best and therefore rewarded with special distinction. The project was about the integration between sensors, a microcontroller, a Bluetooth device and a mobile phone for sending and displaying sensor data.
+</p>
+      
+          <a class="highlighted" href="https://upcommons.upc.edu/handle/2099.1/9037" role="button" aria-hidden="true">See more</a>
+      
+    </div>
+  </li>
+  
+</ul>
+
+              </div>
+            
+        
+            
+                <div class="tab-pane overflow-auto" id="ref" role="tabpanel" aria-labelledby="ref-tab">  
+                  <p><i>Recommendation letter from my previous position as Software Engineer at Agfa Healthcare GmbH (Austria).</i></p>
+                  
+<ul class="list-unstyled experience_list">
+
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <a href="https://global.agfahealthcare.com/"><img src="/assets/img/icons/2x/75px_Agfa.png" width="60" height="60" class="mr-3" alt=""></a>
+    <div class="media-body justify-content-between">
+      <h5>Agfa Healthcare GmbH  <small>(Vienna, Austria, 11/2012 - 05/2018)</small></h5>
+      <em>Software Developer</em>
+      <div id="reference"><p>Mr. Jose Carlos Yanez Nieto, BSc., Born on February 25, 1987, was from 1. November 2012 to May 31, 2018 in the R&amp;D HCIS Medical Documentation department as a software developer in our company.</p>
+
+<p><a href="https://global.agfahealthcare.com/">Agfa HealthCare</a>, a company of the <a href="https://www.agfa.com/corporate/">Agfa-Gevaert Group</a>, is a leading provider of IT-supported clinical workflow and diagnostic image management solutions as well as modern systems for image acquisition and image processing in hospitals and other healthcare facilities. Agfa HealthCare has more than a century of diagnostic imaging experience and has pioneered the healthcare IT market since the early 1990s. The HealthCare Division has branches and agencies in more than 100 countries worldwide.</p>
+
+<p>Mr. Yanez Nieto was responsible for the decisive contribution to the design of the appointment management product in the ORBIS hospital information system. Functionalities developed exclusively by Mr. Yanez Nieto:</p>
+<ul>
+  <li>Connection of the appointment planning to MS Outlook</li>
+  <li>Appointment notification via email / SMS</li>
+  <li>Automatic appointment reminder</li>
+  <li>iCalendar feeds</li>
+</ul>
+
+<p>This included both the product design and the implementation in the following technologies: JAVA (J2EE, JMS, Web Services, XML, XSL ….), PL / SQL as well as the in-house development tools.</p>
+
+<p>Mr. Yanez Nieto has excellent and in-depth specialist knowledge, which he has always brought to our company in a highly profitable manner. We would particularly like to highlight his astonishing general knowledge of the entire product range and the rapid learning of the German language, so that he achieved a remarkable level of language confidence within a short period of time. Much to the benefit of our company, he always expanded and updated his extensive specialist knowledge with great success through regular participation in further training events.</p>
+
+<p>Due to his very good perception, he was always able to accurately grasp even difficult situations immediately and to find very good solutions quickly. He showed a sense of responsibility that went beyond the normal range. Mr. Yanez Nieto also showed a high level of initiative at all times and always fully identified himself with his tasks and our company, which he also took with great enthusiasm.</p>
+
+<p>Even in situations with the greatest workload, he always proved to be extremely resilient. He carried out all tasks completely independently at all times, extremely carefully and well thought out. He always acted calmly, deliberately, goal-oriented and extremely precise. He was always convincing in a special way, both qualitatively and quantitatively. Mr. Yanez Nieto was particularly reliable. We particularly liked the care and accuracy with which he completed all the tasks assigned to him to the fullest satisfaction.</p>
+
+<p>The achievements of Mr. Yanez Nieto have found our full recognition at all times and in every respect.</p>
+
+<p>He was appreciated by everyone because of his always friendly and balanced nature. He was always helpful and courteous and, if necessary, also put personal interests aside. Without exception, his behavior towards superiors, colleagues and customers was exemplary and loyal.</p>
+
+<p>Mr. Yanez Nieto is leaving our company on May 31, 2018 at his own request. We regret this very much because with him we are losing a very good employee. We would like to thank him for his consistently very good performance and wish him continued success and all the best for the future, both professionally and privately.</p>
+
+<p>Agfa HealthCare Ges.m.b.H.</p>
+</div>
+    </div>
+  </li>
+  
+</ul>
+                </div>  
+            
+        
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ANIMATE.JS ANIMATE LIBRARY
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+-->
+
+
+<!--JS FUNCTION FOR RECENT WORK SECTION -->
+<script>
+    $('#test-list a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    })
+</script> 
+
+<!-- OPTIONAL TOAST JS FUNCTION-->
+<script>
+    $(document).ready(function() {
+        $(".toast").toast("show");
+    });
+</script>
+
+
+<script>
+$('body').scrollspy({ target: '#list-example' })
+</script>
+
+<script>
+$('.collapse').collapse()
+</script>
+
+<script>
+$('.show').show()
+</script>
+
+    </div>
+    <div class="dumbarton-spacer"></div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text pull-left">© 2020 - Theme Built By Tyler Butler, See it on
+        <a href="https://github.com/tcbutler320/Jekyll-Theme-Dumbarton" target="_blank" >GitHub</a>
+    </p>
+    <p class="navbar-text pull-right">
+            <!-- Displays Social Media Icons based on _config.yml settings -->
+
+<span style="color: Black;">
+     
+    
+        <a href="https://github.com/josecyn">
+        <span style="color: black;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
+    
+    
+        <a href="https://www.linkedin.com/in/josecarlosyn">
+        <span style="color: black;">
+            <i class="fab fa-linkedin fa-lg"></i></a>
+        </span>
+    
+    
+    
+    
+     
+    <i> &nbsp;&nbsp; </i>
+</span>
+
+    </p>
+  </div>
+</div> 
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+  </body>
+</html>

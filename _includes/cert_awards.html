@@ -1,0 +1,15 @@
+{% assign theme = site.data.themes[site.ui_theme] %}
+<ul class="list-unstyled">
+{% for entry in site.data.cert_awards %}
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <img src="{{ entry.Icon }}" width="60" height="60" class="mr-3" alt="{{ entry.Institution }}">
+    <div class="media-body justify-content-between">
+      <h5>{{ entry.Title }} <small>({{ entry.Institution }}, {{ entry.Date }})</small></h5>
+      <p style="padding-right: 4rem; margin-bottom: .25rem;">{{ entry.Description }}</p>
+      {% if entry.Link %}
+          <a class="highlighted" href="{{ entry.Link }}" role="button" aria-hidden="true">See more</a>
+      {% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>

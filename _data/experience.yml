@@ -1,0 +1,43 @@
+- Company: Human Resocia Co. Ltd.
+  Position: Deep Learning Engineer
+  StartDate: 07/2018
+  EndDate: Present
+  Location: Tokyo, Japan
+  First: true   # one must be true to properly display
+  Link: https://git.resocia.jp/en/
+  Icon: /assets/img/icons/2x/75px_Human.png
+  Points:
+      - Since 10/2018 dispatched to a Japanese company in an R&D team.
+      - Responsible for small projects from data labeling to demonstration.
+      - Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3 and Faster R-CNN.
+      - Developed prototype applications using Python, Android, and C++.
+      - Improved model's efficiency to run on CPU and Android mobile devices.
+      - Applied quantization techniques using Pytorch.
+      - Led the evaluation of cutting-edge products of international companies.
+
+- Company: Agfa Healthcare GmbH
+  Position: Software Developer
+  StartDate: 11/2012
+  EndDate: 05/2018
+  Location: Vienna, Austria
+  First: false
+  Link: https://global.agfahealthcare.com/
+  Icon: /assets/img/icons/2x/75px_Agfa.png
+  Points:
+      - Introduced JEE Technology stack in the project.
+      - Designed and implemented advanced new features that generated direct revenue such as Outlook synchronization, email/SMS notification, and ICS-Feeds (iCal).
+      - Introduced CI with automated unit and integration tests.
+      - Worked together with an offshore team in India (Bangalore).
+
+- Company: Everis an NTT DATA Company
+  Position: Junior Software Engineer
+  StartDate: 09/2009
+  EndDate: 10/2012
+  Location: Barcelona, Spain
+  First: false
+  Link: https://www.everis.com/global/en
+  Icon: /assets/img/icons/2x/75px_Everis.png
+  Points: 
+      - Implemented JMS and Web Services as part of a JEE application.
+      - Designed and implemented a reporting web portal in PHP.
+

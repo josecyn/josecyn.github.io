@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% assign theme = site.data.themes[site.ui_theme] %}
+<html>
+  <body style="background-color:{{theme.background-color}};">
+    <div class="dumbarton-spacer-sm"></div>
+    <div class="container">
+      {{ content }}
+    </div>
+    <div class="dumbarton-spacer"></div>
+  </body>
+</html>

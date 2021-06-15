@@ -1,0 +1,70 @@
+- title: Machine Learning Engineering (MLOps) Specialization
+  program: 
+  school: Coursera
+  year: 2021
+  id: 
+  icon: /assets/img/icons/2x/coursera_circle_60.png
+  description: >
+    Machine learning engineering for production combines the foundational concepts of machine learning with the functional expertise of modern
+    software development and engineering roles.
+  certificate: /assets/pdf/certificates/Coursera_W9WYACS625ZX.pdf
+  link: https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops
+
+- title: Machine Learning for Trading Specialization
+  program: 
+  school: Coursera
+  year: 2020
+  icon: 
+  id: 
+  icon: /assets/img/icons/2x/coursera_circle_60.png
+  description: >
+    Machine Learning for Trading by Google Cloud & New York Institute of Finance. 
+    Implemented quantitative trading strategies with Python and learn how to use reinforcement learning applied to finance.
+  certificate: /assets/pdf/certificates/GRY6SY5LWT69.pdf
+  link: https://www.coursera.org/specializations/machine-learning-trading
+
+- title: Machine Learning with TensorFlow on Google Cloud Platform
+  program: 
+  school: Coursera
+  year: 2018
+  icon: 
+  id: 
+  icon: /assets/img/icons/2x/coursera_circle_60.png
+  description: >
+    Learn how to write distributed machine learning models that scale in Tensorflow, scale out the training of those models,
+    and offer high-performance predictions. 
+    Experiment with end-to-end ML, starting from building an ML-focused strategy and progressing into model training, 
+    optimization, and productionalization with hands-on labs using Google Cloud Platform.
+  certificate: /assets/pdf/certificates/Coursera_JSRD7W54YDJL.pdf
+  link: https://www.coursera.org/specializations/machine-learning-tensorflow-gcp
+
+- title: Deep Learning Specialization
+  program: 
+  school: Coursera
+  year: 2018
+  icon: 
+  id: 
+  icon: /assets/img/icons/2x/coursera_circle_60.png
+  description: >
+    Through five interconnected courses, learners develop a profound
+    knowledge of the latest AI algorithms, mastering deep learning from its
+    foundations to its industry applications (Computer Vision, Natural Language
+    Processing, Speech Recognition, etc).
+  certificate: /assets/pdf/certificates/Coursera_A59G8HTW24XB.pdf
+  link: https://www.coursera.org/specializations/deep-learning
+
+
+- title: Deep Learning Foundations
+  program: 
+  school: Udacity
+  year: 2017
+  icon: 
+  id: 
+  icon: /assets/img/icons/2x/coursera_circle_60.png
+  description: >
+    In this program, we covered topics like TensorFlow, transfer learning,
+    sentiment analysis, convolutional, recurrent networks and GANs. Some topics
+    were presented by authorities such as Sebastian Thrun, Ian Goodfellow and
+    Andrew Trask.
+  certificate: /assets/pdf/certificates/Udacity_nd101.pdf
+  link: https://www.udacity.com/course/deep-learning-nanodegree--nd101

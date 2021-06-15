@@ -1,0 +1,25 @@
+- name: Experience
+  id: exp
+  description: A brief summary of my professional experience.
+  url: experience.html
+  first: true
+  
+- name: Courses
+  id: courses
+  description: It's very important to keep learning, so for the lasts years, I've been focused on Machine Learning courses.
+  content: 
+  first: false
+
+- name: Certifications & Awards
+  id: cert
+  description: 
+  content: 
+  url: certifications.html
+  first: false
+
+- name: References
+  id: ref
+  description: Recommendation letter from my previous position as Software Engineer at Agfa Healthcare GmbH (Austria).
+  content: 
+  url: references.html
+  first: false

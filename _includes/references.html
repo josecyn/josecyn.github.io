@@ -1,0 +1,13 @@
+{% assign theme = site.data.themes[site.ui_theme] %}
+<ul class="list-unstyled experience_list">
+{% for entry in site.data.references %}
+  <li class="media" style="padding-bottom: 20px; padding-top: 10px;">
+    <a href="{{ entry.Link }}"><img src="{{ entry.Icon }}" width="60" height="60" class="mr-3" alt=""></a>
+    <div class="media-body justify-content-between">
+      <h5>{{ entry.Company }}  <small>({{ entry.Location }}, {{ entry.StartDate }} - {{ entry.EndDate }})</small></h5>
+      <em>{{ entry.Position }}</em>
+      <div id="reference">{{ entry.Testimonial | markdownify }}</div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

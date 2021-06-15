@@ -1,0 +1,121 @@
+---
+layout: default
+---
+{% assign theme = site.data.themes[site.ui_theme] %}
+
+<!-- ABOUT ME SECTION -->
+<div class="card mx-auto border-0" style="position:relative;background-color:{{theme.home-background-color}};">
+  <div class="row">
+    <div class="col-md-4">
+      {% if site.animate %}
+        <img src="{{ site.profile_image }}" class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
+      {% else %}
+        <img src="{{ site.profile_image }}" class="img-thumbnail float-left" alt="Jose">
+      {% endif %}
+    </div>
+    <!-- EDUCATION SECTION -->
+    <div class="col-md-8">
+      {% if site.animate %}
+      <div class="card-body animate__animated animate__fadeInRight" style="color:{{theme.education-font-color}};">
+      {% else %}
+      <div class="card-body mt-0" style="color:{{theme.education-font-color}};">
+      {% endif %}
+        <p style="color:{{theme.education-font-color}};">{{ content | markdownify}}<p>
+        {% if site.home_option == "education" %}
+          {% include education.html %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- style="font-family:{{ theme.link-font }};background-color:{{ theme.nav-color }}; -->
+
+<!-- HOME HIGHLIGHTS SECTION --> 
+{% if site.animate %}
+<div class="card mx-auto animate__animated animate__slideInUp animate__delay-1s glowing-border" style="max-width: 100%;">
+{% else %}
+<div class="card mx-auto mb-1 border-0"  style="max-width: 100%;">
+{% endif %}
+  <div class="card-header" style="background-color:{{ theme.home-highlight-background }};">
+    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
+      {% for section in site.data.sections %}
+        {% if section.first %}
+          <li class="nav-item">
+            <a class="nav-link shadow-none" id="{{ section.jsid }}" href="#{{section.id}}" role="tab" aria-controls="{{section.id}}" aria-selected="true" style="font-family:{{ theme.font}};color:{{ theme.home-highlight-header-text}};">{{section.emoji}} {{section.name}}</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+              <a class="nav-link" id="{{ section.jsid }}" href="#{{section.id}}" role="tab" aria-controls="{{section.id}}" aria-selected="true" style="font-family:{{ theme.font}};color:{{ theme.home-highlight-header-text}};">{{section.emoji}} {{section.name}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="card-body">          
+      <div class="tab-content mt-3">
+        {% for section in site.data.sections %}
+            {% if section.name == "Experience" %}
+              <div class="tab-pane active overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                <p><i>{{section.description}}</i></p>
+                {% include experience.html %}
+              </div>
+            {% elsif section.name == "Certifications & Awards" %}
+              <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                <p><i>{{section.description}}</i></p>
+                {% include cert_awards.html %}
+              </div>
+            {% elsif section.name == "Courses" %}
+              <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                <p><i>{{section.description}}</i></p>
+                {% include courses.html %}
+            {% elsif section.name == "References" %}
+                <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                  <p><i>{{section.description}}</i></p>
+                  {% include references.html %}
+                </div>  
+            {% else %}
+              <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
+                <h5 class="card-title text-center"><a href="/{{ section.url }}" class="highlighted">{{section.description}}</a></h5>
+                <p class="card-text">{{ section.content }} </p>              
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ANIMATE.JS ANIMATE LIBRARY
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+-->
+
+
+<!--JS FUNCTION FOR RECENT WORK SECTION -->
+<script>
+    $('#test-list a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    })
+</script> 
+
+<!-- OPTIONAL TOAST JS FUNCTION-->
+<script>
+    $(document).ready(function() {
+        $(".toast").toast("show");
+    });
+</script>
+
+
+<script>
+$('body').scrollspy({ target: '#list-example' })
+</script>
+
+<script>
+$('.collapse').collapse()
+</script>
+
+<script>
+$('.show').show()
+</script>

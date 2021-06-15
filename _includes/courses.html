@@ -1,0 +1,21 @@
+<ol>
+    {% for course in site.data.courses %}
+    <li style="padding-bottom: 10px; padding-top: 10px;">
+      <div>
+        <!--img src="{{ course.icon }}" style='float: left;' alt=""-->
+        <div class="col-sm-8">
+          <div class="title font-weight-bold">{{ course.title }}</div>
+          <div class="author"><em>{{ course.school }}, {{ course.year }}</em></div>
+          <div class="links">
+            {% if course.link %}
+              <a href="{{ course.link }}" role="button" target="_blank"><i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+            {% endif %}
+            {% if course.certificate %}
+              <a href="{{ course.certificate }}" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf" aria-hidden="true"></i></a>
+            {% endif %}
+          </div>
+      </div>
+    </li>
+    {% endfor %}
+  </div>
+</ol>
