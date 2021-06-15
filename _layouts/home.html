@@ -47,7 +47,7 @@ last-updated: 2021-12-30 7:15 PM
       {% for section in site.data.sections %}
         {% if section.first %}
           <li class="nav-item">
-            <a class="nav-link shadow-none" id="{{ section.jsid }}" href="#{{section.id}}" role="tab" aria-controls="{{section.id}}" aria-selected="true" style="font-family:{{ theme.font}};color:{{ theme.home-highlight-header-text}};">{{section.emoji}} {{section.name}}</a>
+            <a class="nav-link shadow-none active" id="{{ section.jsid }}" href="#{{section.id}}" role="tab" aria-controls="{{section.id}}" aria-selected="true" style="font-family:{{ theme.font}};color:{{ theme.home-highlight-header-text}};">{{section.emoji}} {{section.name}}</a>
           </li>
         {% else %}
           <li class="nav-item">
@@ -94,27 +94,10 @@ last-updated: 2021-12-30 7:15 PM
 <!--JS FUNCTION FOR RECENT WORK SECTION -->
 <script>
     $('#test-list a').on('click', function (e) {
-    e.preventDefault()
-    $(this).tab('show')
+      e.preventDefault()
+      $(this).tab('show')
     })
 </script> 
 
-<!-- OPTIONAL TOAST JS FUNCTION-->
-<script>
-    $(document).ready(function() {
-        $(".toast").toast("show");
-    });
-</script>
 
 
-<script>
-$('body').scrollspy({ target: '#list-example' })
-</script>
-
-<script>
-$('.collapse').collapse()
-</script>
-
-<script>
-$('.show').show()
-</script>
