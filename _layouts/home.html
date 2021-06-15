@@ -1,5 +1,10 @@
 ---
-layout: default
+layout: page
+permalink: /index.html
+title: Home
+description: Welcome to my personal website
+header-img: 
+last-updated: 2021-12-30 7:15 PM
 ---
 {% assign theme = site.data.themes[site.ui_theme] %}
 
@@ -69,6 +74,7 @@ layout: default
               <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                 <p><i>{{section.description}}</i></p>
                 {% include courses.html %}
+              </div>
             {% elsif section.name == "References" %}
                 <div class="tab-pane overflow-auto" id="{{section.id}}" role="tabpanel" aria-labelledby="{{section.id}}-tab">  
                   <p><i>{{section.description}}</i></p>
@@ -84,13 +90,6 @@ layout: default
       </div>
   </div>
 </div>
-
-
-
-<!-- ANIMATE.JS ANIMATE LIBRARY
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
--->
-
 
 <!--JS FUNCTION FOR RECENT WORK SECTION -->
 <script>
