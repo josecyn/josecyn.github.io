@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "Steel Beam counting"
-description: "Counting of steel beam objects"
+title:  "Steel Beam Counting"
+description: "Counting of steel beam objects."
 type: card-dated
-date: 2021-06-15 07:17:00 +0900
 image: http://placehold.it/750X300?text=Header+Image # for local images, place in /assets/img/posts/
 caption: 
-last-updated: 2021-06-15 07:17:00 +0900
 categories: post
-tag: Pytorch
+tags: 
+  - Pytorch
+  - Computer Vision
+  - Segmentation
 author: Jose
 card: card-2
 ---

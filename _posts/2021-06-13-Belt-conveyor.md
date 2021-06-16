@@ -3,12 +3,13 @@ layout: post
 title:  "Handwritten character recognition"
 description: "Hand written character recognition in any direction on a conveyor belt."
 type: card-dated
-date: 2021-06-13 15:49:00 +0900
 image: http://placehold.it/750X300?text=Header+Image # for local images, place in /assets/img/posts/
 caption: 
-last-updated: 2021-06-13 15:49:00 +0900
 categories: post
-tag: computer vision
+tags: 
+  - Computer Vision
+  - Robotics
+  - NVIDIA Jetson TX2
 author: Jose
 card: card-2
 ---

@@ -4,7 +4,6 @@ permalink: /about.html
 title: About Me
 description: Get to know what I'm up too
 header-img: 
-last-updated: 2021-15-30 7:15 PM
 ---
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
