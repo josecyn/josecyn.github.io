@@ -74,29 +74,29 @@ Let's see an example of how to control this flow programmatically.
 
 ```python
 def __init__(self):
-self.quant = torch.quantization.QuantStub()
-self.dequant = torch.quantization.DeQuantStub()
-self.module_list = # create model
-...
+    self.quant = torch.quantization.QuantStub()
+    self.dequant = torch.quantization.DeQuantStub()
+    self.module_list = # create model
+    ...
 
 
 def forward(self, x):
-yolo_outputs = []
-noquant_layers = self.get_noquant_layers() # get no quant operations index
+    yolo_outputs = []
+    noquant_layers = self.get_noquant_layers()        # get no quant operations index
 
-x_isquant = False
-for i, module inenumerate(self.module_list):
-# quant control
-if i in noquant_layers and x_isquant:
-x = self.dequant(x)
-x_isquant = False
-elif i notin noquant_layers andnot x_isquant:
-x = self.quant(x)
-x_isquant = True
+    x_isquant = False
+    for i, module in enumerate(self.module_list):
+        # quant control
+        if i in noquant_layers and x_isquant:
+            x = self.dequant(x)
+            x_isquant = False
+        elif i not in noquant_layers and not x_isquant:
+            x = self.quant(x)
+            x_isquant = True
 
-x = module(x)
+        x = module(x)
 
-return x
+    return x
 ```
 
 In this example, I get the "no quant layers" at the beginning calling the method `self.get_noquant_layers()`.
@@ -123,9 +123,9 @@ This is an example on how to use it:
 
 ```python
 def fuse_model(self):
-for i, m inenumerate(self.module_list):
-ifisinstance(m, nn.Sequential) andisinstance(m[0], nn.Conv2d) andlen(m) >= 2:
-torch.quantization.fuse_modules(m, [['conv', 'batch_norm', 'relu']], inplace=True)
+    for i, m in enumerate(self.module_list):
+        if isinstance(m, nn.Sequential) and isinstance(m[0], nn.Conv2d) and len(m) >= 2:
+            torch.quantization.fuse_modules(m, [['conv', 'batch_norm', 'relu']], inplace=True)
 ```
 
 In the code above, we go through all the sequential modules checking whether the first element is a convolution layer.
@@ -136,23 +136,23 @@ Example before fusing:
 
 ```
 (0): Sequential(
-(conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-(batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-(relu): ReLU()
-)
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU()
+    )
 ```
 
 After fusing:
 
 ```
 (0): Sequential(
-(conv): ConvReLU2d(
-(0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-(1): ReLU()
-)
-(batch_norm): Identity()
-(relu): Identity()
-)
+      (conv): ConvReLU2d(
+        (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): ReLU()
+      )
+      (batch_norm): Identity()
+      (relu): Identity()
+    )
 ```
 
 Note the use of the `Identity()` operation in the replaced operators `batch_norm` and `relu`.
@@ -183,9 +183,9 @@ This is how it looks when the model structure is printed:
 
 ```
 (17): Connect(
-(f_add): FloatFunctional(
-(activation_post_process): Identity()
-)
+  (f_add): FloatFunctional(
+    (activation_post_process): Identity()
+  )
 )
 ```
 
@@ -244,13 +244,13 @@ It prints the information of the first element in the first layer (static quanti
 Output:
 ```
 ConvReLU2d(
-(0): Conv2d(
-3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-(activation_post_process): HistogramObserver()
-)
-(1): ReLU(
-(activation_post_process): HistogramObserver()
-)
+ (0): Conv2d(
+   3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+   (activation_post_process): HistogramObserver()
+ )
+ (1): ReLU(
+   (activation_post_process): HistogramObserver()
+ )
 )
 ```
 
@@ -260,15 +260,15 @@ And this is how it looks for QAT:
 
 ```
 ConvReLU2d(
-3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
-(activation_post_process): FakeQuantize(
-fake_quant_enabled=tensor([1], dtype=torch.uint8), observer_enabled=tensor([1], dtype=torch.uint8), scale=tensor([1.]), zero_point=tensor([0])
-(activation_post_process): MovingAverageMinMaxObserver(min_val=tensor([]), max_val=tensor([]))
-)
-(weight_fake_quant): FakeQuantize(
-fake_quant_enabled=tensor([1], dtype=torch.uint8), observer_enabled=tensor([1], dtype=torch.uint8), scale=tensor([1.]), zero_point=tensor([0])
-(activation_post_process): MovingAverageMinMaxObserver(min_val=tensor([]), max_val=tensor([]))
-)
+  3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)
+  (activation_post_process): FakeQuantize(
+    fake_quant_enabled=tensor([1], dtype=torch.uint8), observer_enabled=tensor([1], dtype=torch.uint8), scale=tensor([1.]), zero_point=tensor([0])
+    (activation_post_process): MovingAverageMinMaxObserver(min_val=tensor([]), max_val=tensor([]))
+  )
+  (weight_fake_quant): FakeQuantize(
+    fake_quant_enabled=tensor([1], dtype=torch.uint8), observer_enabled=tensor([1], dtype=torch.uint8), scale=tensor([1.]), zero_point=tensor([0])
+    (activation_post_process): MovingAverageMinMaxObserver(min_val=tensor([]), max_val=tensor([]))
+  )
 )
 ```
 
@@ -318,20 +318,20 @@ Example of training loop:
 
 ```python
 for epoch in range(args.cal_epochs):
-print(f'QAT Training process epoch {epoch+1}/{args.cal_epochs}')
-model = train(model, opt, conf, data_loaders['train']) # training epoch
-if epoch > 3:
-# Freeze quantizer parameters
-model.apply(torch.quantization.disable_observer)
-if epoch > 2:
-# Freeze batch norm mean and variance estimates
-model.apply(torch.nn.intrinsic.qat.freeze_bn_stats)
+    print(f'QAT Training process epoch {epoch+1}/{args.cal_epochs}')
+    model = train(model, opt, conf, data_loaders['train'])    # training epoch
+    if epoch > 3:
+        # Freeze quantizer parameters
+        model.apply(torch.quantization.disable_observer)
+    if epoch > 2:
+        # Freeze batch norm mean and variance estimates
+        model.apply(torch.nn.intrinsic.qat.freeze_bn_stats)
 
-# Check the accuracy after each epoch
-quantized_model = torch.quantization.convert(model.eval(), inplace=False)
-metrics = test(quantized_model.eval(), args, loaders['test'])
-print(f"## QAT Model Evaluation Results Epoch {epoch+1}##")
-pprint.pprint(metrics)
+    # Check the accuracy after each epoch
+    quantized_model = torch.quantization.convert(model.eval(), inplace=False)
+    metrics = test(quantized_model.eval(), args, loaders['test'])
+    print(f"## QAT Model Evaluation Results Epoch {epoch+1}##")
+    pprint.pprint(metrics)
 
 print('QAT Training done')
 ```
@@ -346,8 +346,8 @@ For example:
 
 ```python
 def get_traced_module(model, img_size) -> torch.nn.Module:
-input_data = get_random_input(img_size, model.gpu) # get_random_input just uses torch.randn
-return torch.jit.trace(model.forward, input_data).eval()
+    input_data = get_random_input(img_size, model.gpu)      # get_random_input just uses torch.randn
+    return torch.jit.trace(model.forward, input_data).eval()
 
 torch.jit.save(get_traced_module(quantized_model, imsize), args.export_file)
 ```

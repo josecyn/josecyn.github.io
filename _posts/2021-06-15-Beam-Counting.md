@@ -118,10 +118,10 @@ The postprocessing task using UNet models is more complex than using Mask R-CNN.
 The basic steps of the whole process are the following:
 
 1. __Predict__ the body and border mask and apply a threshold 140.
-2. __Increase the body area__ a bit (opencv 'dilate').
-3. __Decrease the border area__ a bit (opencv 'erode').
+2. __Increase the body area__ a bit (opencv `dilate`).
+3. __Decrease the border area__ a bit (opencv `erode`).
 4. __Substract__ the border mask to the body mask.
-5. __Find the contour areas__ using opencv's 'findContours' method.
+5. __Find the contour areas__ using opencv's `findContours` method.
 6. __Filter actual object__ areas from previous contours.
 
 Now, I'll explain each step more carefully.
@@ -155,7 +155,7 @@ It is __extremely important__ that the objects are isolated and don't touch each
 <img src="/assets/img/posts/beam_counting_p1/opencv_4.PNG" width="452" height="422"/>
 <img src="/assets/img/posts/beam_counting_p1/opencv_1.png" width="452" height="422"/>
 
-On the first picture, the body prediction after postprocessing of steps 1 - 4. On the second picture, the result of 'findContours' method. Each different color represents a different contour. In that case, we have 4 objects + background.
+On the first picture, the body prediction after postprocessing of steps 1 - 4. On the second picture, the result of `findContours` method. Each different color represents a different contour. In that case, we have 4 objects + background.
 
 Otherwise, if objects are not well isolated from each other, the result is that:
 
