@@ -14,7 +14,7 @@ author: Jose
 card: card-2
 ---
 
-# Overview
+# Introduction
 
 In this project, the task is to count steel beam objects in the image. I was asked to do it using segmentation models.
 At first, I tried using the well-known [Mask RCNN repository](https://github.com/matterport/Mask_RCNN) but the results were not quite good.
