@@ -13,13 +13,6 @@ author: Jose
 card: card-3
 ---
 
-<!-- omit in toc -->
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Solution Proposed](#solution-proposed)
-- [Conclusions](#conclusions)
-- [Results](#results)
 
 ## Introduction
 
