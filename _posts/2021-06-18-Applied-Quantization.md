@@ -21,7 +21,7 @@ The YOLOv3 is a very large architecture and the tiny version of it is quite smal
 
 I converted the original darknet model to ONNX and then I took it as the baseline.
 Then, I converted the same model to Pytorch and executed it in FP32 (floating point 32 bits) without any change.
-Following, I executed quantization as explained here: {% post_url 2021-06-25-Quantization %}.
+Following, I executed quantization as explained here: [Pytorch Quantization of YOLOv3 Models]({% post_url 2021-06-25-Quantization %}).
 Finally, I took the output Pytorch INT8 model and executed it on the chosen devices.
 
 The times that are shown below these lines refer just to the inference time of the model.
