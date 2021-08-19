@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "Applied Quantization With Pytorch"
 description: "Results of applying Pytorch quantization"
 type: card-dated
@@ -9,7 +10,7 @@ categories: post
 tags: 
   - Pytorch
 author: Jose
-card: card-2
+card: card-1
 ---
 
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "Steel Beam Counting (part 1)"
 description: "Counting of steel beam objects using segmentation."
 type: card-dated

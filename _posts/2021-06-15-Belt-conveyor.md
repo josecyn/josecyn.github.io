@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "Handwritten Character Recognition"
 description: "Handwritten character recognition in any direction on a conveyor belt."
 type: card-dated
@@ -11,7 +12,7 @@ tags:
   - Robotics
   - NVIDIA Jetson TX2
 author: Jose
-card: card-2
+card: card-3
 ---
 
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "Weak Supervision Dataset Creation"
 description: "Fixing a YOLOv3 model using weak supervision"
 type: card-dated
@@ -11,7 +12,7 @@ tags:
   - Object Detection
   - Weak Supervision
 author: Jose
-card: card-3
+card: card-1
 ---
 
 ## Introduction

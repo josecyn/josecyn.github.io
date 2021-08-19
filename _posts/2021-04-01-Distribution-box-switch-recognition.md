@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "Distribution Box Switch Recognition"
 description: "Status recognition of distribution box switches"
 type: card-dated

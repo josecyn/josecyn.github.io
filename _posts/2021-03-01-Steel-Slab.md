@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /01ead88355127f33e70117da2578556e80ac1dbc/:categories/:year/:month/:day/:title:output_ext
 title:  "ID Recognition On Steel Slab"
 description: "ID Recognition from camera footage"
 type: card-dated
@@ -10,7 +11,7 @@ tags:
   - Computer Vision
   - Object Detection
 author: Jose
-card: card-3
+card: card-2
 ---
 
 
