@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 {% assign theme = site.data.themes[site.ui_theme] %}
 <html>
-  {% include head-blog.html %}
+  {% include head.html %}
   <body>
+    {% include analytics_body.html %}
     {% include nav.html %}
     <div class="container">
       {% if page.header-img %}
