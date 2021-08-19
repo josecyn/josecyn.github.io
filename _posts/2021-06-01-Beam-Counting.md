@@ -15,7 +15,7 @@ author: Jose
 card: card-2
 ---
 
-# Introduction
+## Introduction
 
 In this project, the task is to count steel beam objects in the image. I was asked to do it using segmentation models.
 At first, I tried using the well-known [Mask RCNN repository](https://github.com/matterport/Mask_RCNN) but the results were not quite good.
@@ -32,7 +32,7 @@ The base idea is to use an __image-to-image UNet architecture__ using a deep enc
 Objects in the picture are very close one to another and it becomes very hard to separate them. For that reason, I decided to create two models: one will tell me all the __objects__ in the image, and the second one will tell me the __borders__ of those objects. In the postprocessing phase, I will have to __substract__ the borders from the objects. That will help me to count how many objects appear in the picture. For details on why I needed these two models, check the section below Step 5 under Postprocessing.
 
 
-# Dataset
+## Dataset
 
 In this task, we have a small dataset with around 375 pictures that contains many different shapes. For some shapes, we have many examples (20+) and for others, we just have 1. In addition, we want our model to correctly predict unseen shapes.
 
@@ -40,14 +40,14 @@ The pictures have been taken in a few different locations and conditions. This i
 
 After working on the Mask R-CNN model, I had around 295 labeled images. Images were labeled using [labelme](https://github.com/wkentaro/labelme).
 
-## Problem And Idea
+### Problem And Idea
 
 To tell apart from one shape of an object to another when using segmentation it's a very hard task because objects are located very near to each other.
 As a solution, I decided to try to have 2 different classes: __Object body__ and __object border__. 
 
 In the post-processing section, I would just consider the body of the object, and that would be a few pixels away from the next object hopefully.
 
-### Objects Body Dataset
+#### Objects Body Dataset
 
 That was easy because the creator of the labeling tool already provides a script that can handle that.
 That script creates a VOC-like folder structure. I took the __target masks__ from the folder __SegmentationClassPNG__.
@@ -56,7 +56,7 @@ Example:
 
 <img src="/assets/img/posts/beam_counting_p1/body_object.PNG" />
 
-### Borders Dataset
+#### Borders Dataset
 
 That was a bit harder to build. First of all, I created a script that takes a JSON file with all the polygons and their points and saves every shape individually. 
 
@@ -68,7 +68,7 @@ Result:
 
 <img src="/assets/img/posts/beam_counting_p1/border_object.PNG" />
 
-## Dataset size
+### Dataset size
 
 During the development of the Mask R-CNN, I saw that there was a big difference between the shapes in the pictures. Some of them are round and thick while others are very thin. I realized that the dataset had way more thick and round examples than the thin one. So I decided to create a more __balanced dataset based on the thickness__ of the objects. Because the thin objects are rarer, I ended up having a small dataset of only 80 training + 10 validation examples. Having so few examples, image augmentation became important. See details below.
 
@@ -76,7 +76,7 @@ After training with the models with both datasets, the models trained on the sma
 
 Based on the robot surgery segmentation implementation, I implemented my own dataset class.
 
-# Model architecture
+## Model architecture
 
 The [UNET](https://arxiv.org/abs/1505.04597) was developed by Olaf Ronneberger et al. for BioMedical Image Segmentation. The architecture contains two paths. The first path is the contraction path (also called as the encoder) which is used to capture the context in the image. The encoder is just a traditional stack of convolutional and max pooling layers. The second path is the symmetric expanding path (also called as the decoder) which is used to enable precise localization using transposed convolutions. Thus it is an end-to-end fully convolutional network (FCN), i.e. it only contains Convolutional layers and does not contain any Dense layer because of which it can accept an image of any size.
 
@@ -90,13 +90,13 @@ Both models, body, and border, are based on the same architecture: __UNet with R
 
 To try some of these models I had to adapt the original code from TernausNet. Specifically, I modified the `models.py` file to add support for VGG-19, VGG-19bn, ResNet-101, and ResNet-152.
 
-# Training
+## Training
 
 I tried training the models resizing the images between 800 and 1280 pixels and batches of 1 or 2 images. I used [__Jaccard index__ (Intersection Over Union)](https://en.wikipedia.org/wiki/Jaccard_index) and [dice coefficient](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient) as the evaluation metric. I also tried AP but I didn't use it.
 
 After 2000 steps the models began to be already good. Best results were found after 8000 steps.
 
-## Image augmentations
+### Image augmentations
 
 I didn't have a lot of examples and I also wanted the model to perform well on unseen data, so I used __image augmentations during training__ a lot.
 
@@ -113,7 +113,7 @@ The image augmentations I used were:
 
 I also tried taking only small random crops from the image, but it didn't work as expected.
 
-# Postprocessing
+## Postprocessing
 
 The postprocessing task using UNet models is more complex than using Mask R-CNN.
 
@@ -128,7 +128,7 @@ The basic steps of the whole process are the following:
 
 Now, I'll explain each step more carefully.
 
-## Steps 1 - 4
+### Steps 1 - 4
 
 I use the models to predict body objects and border objects for the same image.
 The pixel values range from 0 to 149. So, I remove the pixels in which the model was not "very sure", which means applying a threshold of 140 and removing pixels with lower values than 140.
@@ -142,7 +142,7 @@ On the left, in the 1st picture, there is the body prediction. Pay attention and
 In the middle, the 2nd picture, there is the border prediction.
 On the right, in the 3rd picture, there is the result of steps 1 to 4. As you can see, __the gaps between objects are much clear__ than in picture number 1. That will help a lot the following steps of the postprocessing.
 
-## Step 5
+### Step 5
 
 At this moment, the result of steps 1 to 4 is going to be processed to find out the areas on the image.
 
@@ -165,7 +165,8 @@ Otherwise, if objects are not well isolated from each other, the result is that:
 <img src="/assets/img/posts/beam_counting_p1/opencv_2.PNG" width="452" height="422"/>
 
 In the first picture, the body prediction without any processing. Because objects are not well delimited, `findContours` method just finds __one single object__!
-## Step 6
+
+### Step 6
 
 In the final step, once we have all the contours of the image, __it is time to count them__.
 
@@ -174,7 +175,7 @@ Because the predictions are imperfect, we end up with lines, dots, and other are
 - __Simple area size arithmetic filtering__
 - __Machine learning filtering__
 
-### Area-based Arithmetic Filtering
+#### Area-based Arithmetic Filtering
 
 In this simple approach, I take the biggest contour area of the image and set a limit in the X% of its area size. __All objects below this limit are not considered__. The reason for this approach is that objects usually are about the same size. With this limit, we get rid of small objects.
 
@@ -184,7 +185,7 @@ Even though is a very simple approach, it was the __approach with better results
 
 Inconvenient of this approach are that shapes of very different sizes in the same picture, will probably not be well classified. Another problem is when two objects are not well delimited; the resulting object will have a large area thus affecting the limit to be also very large and misclassifying smaller objects.
 
-### Machine Learning Filtering
+#### Machine Learning Filtering
 
 This approach was based on the winning Kaggle solution above. __I used a LightGBM model to predict IoU__.
 
@@ -216,12 +217,12 @@ First, I created a training CSV dataset. The resulting CSV contains one column f
 
 To my surprise, __the simpler model (ext2) performed better than the more complex one (ext1)__. But both were not as good as the simple area size filtering explained above.
 
-## End Result Evaluation
+### End Result Evaluation
 
 For the evaluation, I created a script that ends up having a csv file that contains two columns: image name and number of objects.
 So now is very simple to compare the output of the whole process against the test CSV file to output the __accuracy__, __mse__ and number of __correct answers__.
 
-# Result
+## Result
 
 The best model was composed of the following elements:
 
@@ -237,18 +238,18 @@ The final result is:
 
 Obviously, with such a small test dataset, this accuracy may change substantially.
 
-## Some Correct Predictions
+### Some Correct Predictions
 
 <img src="/assets/img/posts/beam_counting_p1/DSCF3568_collage.png" />
 <img src="/assets/img/posts/beam_counting_p1/DSCF3691_collage.png" />
 <img src="/assets/img/posts/beam_counting_p1/DSCF4267_collage.png" />
 
-## Some Wrong Predictions
+### Some Wrong Predictions
 
 <img src="/assets/img/posts/beam_counting_p1/A3T0 (1)_collage.png" />
 <img src="/assets/img/posts/beam_counting_p1/DSCF4558_collage.png" />
 
-## Links
+### Links
 
 - [Robot surgery segmentation](https://github.com/ternaus/robot-surgery-segmentation)
 - [TernausNet](https://github.com/ternaus/TernausNet)

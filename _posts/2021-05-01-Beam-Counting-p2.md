@@ -15,7 +15,7 @@ author: Jose
 card: card-2
 ---
 
-# Introduction
+## Introduction
 
 In part 1 of this project, following the requirements, I tried to count the object in the picture using segmentation.
 

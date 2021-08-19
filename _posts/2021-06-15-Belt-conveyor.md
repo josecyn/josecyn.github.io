@@ -16,7 +16,7 @@ card: card-3
 ---
 
 
-### Introduction
+## Introduction
 
 In this project, I created a demo of handwritten character recognition.
 
@@ -34,14 +34,14 @@ It runs at real-time 30fps and when it detects a piece of text it runs at 7fps. 
 The data has been manually collected and labeled. 
 There were few examples, so this also adds up to the global difficulty of the project.
 
-### Methodology
+## Methodology
 
 This is a 2-step process:
 
 * Detect text in the image, crop and rotate
 * Apply character recognition to the result of the first step
 
-### Motivation
+## Motivation
 
 In this demo, I wanted to support any alphanumeric character (plus hyphen) in any direction (up, right, down, and left).
 At first, I wanted to solve this problem with a single model, but soon I realized that it is too complex.
@@ -53,7 +53,7 @@ The first one will carry text detection. When it detects some text in the image,
 
 Once the text has been cropped and rotated, the second model will carry over and perform character recognition.
 
-### First Model: Text Detection
+## First Model: Text Detection
 
 The first task is to detect text. This is a classic object detection problem with 4 classes: up, right, down, and left.
 
@@ -71,7 +71,7 @@ A couple of examples:
 It is a very fast model, it runs at 30fps on this hardware 
 so I was happy with the result and moved to the next subproblem; **character recognition**.
 
-### Second Model: Character Recognition
+## Second Model: Character Recognition
 
 This is a much harder problem. 
 I tried to apply the same architecture as in the previous step, but it didn't work so well.
@@ -95,7 +95,7 @@ A couple of examples:
 As expected, this model is slower than the text detection one.
 To improve inference time, I skip some frames, I don't perform character recognition of every frame detected. This could have been achieved by increasing the batch size with similar results.
 
-### Additional Information
+## Additional Information
 
 Additionally to the deep learning models, I also developed the desktop application.
 The application was made in `Python` using `tkinter` library.
