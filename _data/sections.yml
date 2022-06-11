@@ -6,7 +6,7 @@
   
 - name: Courses
   id: courses
-  description: It's very important to keep learning, so for the lasts years, I've been focused on Machine Learning courses.
+  description: It's very important to keep learning, so for the lasts years, I've been focused on machine learning courses.
   content: 
   first: false
 
@@ -19,7 +19,7 @@
 
 - name: References
   id: ref
-  description: Recommendation letter from my previous position as Software Engineer at Agfa Healthcare GmbH (Austria).
+  description: Feedback from previous positions.
   content: 
   url: references.html
   first: false

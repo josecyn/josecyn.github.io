@@ -36,6 +36,7 @@ keybase:
 pgp: 
 ctftime: 
 phonenumber: 
+analytics: true
 
 #========================================#
 # --------- UI THEMES -------------------#
@@ -88,6 +89,7 @@ markdown: kramdown
 
 kramdown:
   syntax_highlighter: rouge
+  auto_ids: true
 
 plugins:
   - jekyll-feed

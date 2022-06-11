@@ -1,15 +1,30 @@
+- Company: Money Forward Inc.
+  Position: Senior Deep Learning Engineer
+  StartDate: 01/2022
+  EndDate: Present
+  Location: Tokyo, Japan
+  First: true   # one must be true to properly display
+  Link: https://moneyforward.com
+  Icon: /assets/img/icons/2x/75px_mf.png
+  Points:
+      - Designing machine learning systems.
+      - Overseeing the technical aspect of the projects.
+      - Developing deep learning models.
+      - Running tests and experiments.
+      - Increasing the team's technical knowledge and providing growth opportunities to its team members.
+
 - Company: Human Resocia Co. Ltd.
   Position: Deep Learning Engineer
   StartDate: 07/2018
-  EndDate: Present
+  EndDate: 12/2021
   Location: Tokyo, Japan
   First: true   # one must be true to properly display
   Link: https://git.resocia.jp/en/
   Icon: /assets/img/icons/2x/75px_Human.png
   Points:
       - Since 10/2018 dispatched to a Japanese company in an R&D team.
-      - Responsible for small projects from data labeling to demonstration.
-      - Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3 and Faster R-CNN.
+      - Was responsible for research projects from data labeling to demonstration.
+      - Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3, and Faster R-CNN.
       - Developed prototype applications using Python, Android, and C++.
       - Improved model's efficiency to run on CPU and Android mobile devices.
       - Applied quantization techniques using Pytorch.
