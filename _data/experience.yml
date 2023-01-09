@@ -7,11 +7,10 @@
   Link: https://moneyforward.com
   Icon: /assets/img/icons/2x/75px_mf.png
   Points:
-      - Designing machine learning systems.
-      - Overseeing the technical aspect of the projects.
-      - Developing deep learning models.
-      - Running tests and experiments.
-      - Increasing the team's technical knowledge and providing growth opportunities to its team members.
+      - Design machine learning systems for document information extraction.
+      - Develop ML pipelines in AWS.
+      - Create computer vision models for object detection and OCR using PyTorch.
+      - Improve the team's Know-How and mentor new members.
 
 - Company: Human Resocia Co. Ltd.
   Position: Deep Learning Engineer
@@ -22,13 +21,11 @@
   Link: https://git.resocia.jp/en/
   Icon: /assets/img/icons/2x/75px_Human.png
   Points:
-      - Since 10/2018 dispatched to a Japanese company in an R&D team.
-      - Was responsible for research projects from data labeling to demonstration.
-      - Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3, and Faster R-CNN.
-      - Developed prototype applications using Python, Android, and C++.
-      - Improved model's efficiency to run on CPU and Android mobile devices.
-      - Applied quantization techniques using Pytorch.
-      - Led the evaluation of cutting-edge products of international companies.
+      - Led PoC projects from data labeling to demonstration using models like EffcientDet, CenterNet, YOLOv3, and Faster R-CNN.
+      - Applied quantization techniques to accelerate inference in different architectures such as CPU, GPU, edge devices, and smartphones.
+      - Used multiple runtimes such as TensorRT, PyTorch, ONNX, CoreML, and SNPE.
+      - Developed prototype applications using Python, Swift, Java (Android), and C++.
+
 
 - Company: Agfa Healthcare GmbH
   Position: Software Developer
