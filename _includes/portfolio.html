@@ -22,7 +22,9 @@
   <div class="col-md-12">
     {% for post in site.posts %}
         <div class="blogcard {{post.card}} mb-4 mt-4" style="width: 100%;">
-          <h3><a href="{{ post.url }}" class="nohighlight">{{ post.title }}</a></h3>
+          <h3>
+            <a href="{{ post.url }}" class="nohighlight" style="text-decoration: none; color: rgb(65, 65, 65);">{{ post.title }}</a>
+          </h3>
           {% for tag in post.tags %}
             <a class="badge badge-primary" style="background-color: rgba(78, 34, 208, 0.1);color: #4e22d0;">{{ tag }}</a>  
           {% endfor %}

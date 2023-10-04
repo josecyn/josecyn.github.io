@@ -6,9 +6,10 @@ date: 2021-06-10
 
 ### Hi, I'm Jose Carlos 👋
 
-I'm a Software Engineer specialized in Deep Learning with more than 10 years of experience.
-During all these years, I have developed in Python, Java, PHP, and CPL (proprietary technology). I have designed web, backend, frontend, and scripting solutions for platforms such as mobile devices, desktop, and servers.
+I am an accomplished Software Engineer with over 12 years of experience specialized in Deep Learning technologies. 
 
-All these different projects made me versatile, making me able to face every challenge and adopt new technologies and methodologies to achieve success.
+Through developing solutions across web, backend, frontend, and scripting domains for mobile, desktop, and server platforms, I have cultivated versatility and adaptability in architecting impactful solutions. 
 
-<!--a href="mailto:josecarlosyn@gmail.com" class="highlighted">Contact me</a-->
+With proficiency in languages such as Python, Java, PHP, and CPL (a proprietary language), I am adept at mastering cutting-edge technologies.
+
+ The variety of projects I have delivered has equipped me with the ability to thrive in new challenges that expand my technical skills. With a robust background and passion for programming, I am prepared to utilize my experience to tackle complex development projects and apply my expertise to advance innovative solutions that create business value.

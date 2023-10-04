@@ -8,20 +8,20 @@ header-img:
 
 <h1 class="mx-auto" style="font-family:Courgette;">{{ page.title }}</h1>
 
-I'm Jose Carlos. I was born in beautiful Barcelona, Spain.
+Hi there! 
 
-Since early childhood, I always enjoyed finding out how things work, and somehow, I still do it these days.
+I'm Jose Carlos, a technology enthusiast born in the beautiful city of Barcelona. 
 
-After finishing university and a few years working I decided to move to Vienna (Austria) with my girlfriend.
-I always wanted to live abroad. I had no specific plans. In those 5 years, we had amazing experiences, we met wonderful people and we even had our wedding there! But we decided to move to Japan looking for new challenges.
+Ever since I was young, I've been fascinated by how things work. This curiosity still drives me today in my career and hobbies.
 
-I always had an interest in Japanese culture. And even more, after traveling two times between 2015 and 2017.
-Nowadays, we live in Tokyo and we are enjoying it a lot!
+After university, I worked for a few years before my girlfriend and I decided to take a leap and move to Vienna, Austria. Living abroad had always been a dream of mine. Our 5 years in Vienna were incredible - we made lifelong friends, got married, and made memories we'll cherish forever. 
 
-I like everything technology-related like computers, mobile devices, games, VR, blockchain technology, etc.
-Apart from that, I like to travel, read, and sports in general.
+Looking for a new challenge, we moved to Japan for 5 unforgettable years. Now we're thrilled to be back in Vienna, a city we hold dear. 
 
-Thank you for visiting my personal website. 
-Don't hesitate to say hi!
+These days, I enjoy immersing myself in all things tech - computers, programming, mobile tech, VR, blockchain, and more. I'm also an avid traveler who loves exploring new places and cultures. Reading, finance, and sports round out my interests. 
+
+I created this site to showcase my work and connect with new opportunities. 
+
+Thanks so much for stopping by - don't hesitate to say hello!
 
 Jose

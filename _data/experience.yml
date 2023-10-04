@@ -1,17 +1,29 @@
+- Company: Pixofarm GmbH.
+  Position: Senior Deep Learning Engineer
+  StartDate: 03/2023
+  EndDate: 10/2023
+  Location: Vienna, Austria
+  First: true   # one must be true to properly display
+  Link: https://www.linkedin.com/company/pixofarm/
+  Icon: /assets/img/icons/2x/75px_pixofarm.png
+  Points:
+      - Developed a computer vision system to measure apples from stereo video input using object detection, segmentation, and tracking algorithms and deployed it on an NVIDIA Orin NX.
+      - Led improvements to image segmentation models for detecting trees introducing a model based on transformers architecture.
+      - Developed and integrated high-performance deep learning object detection models into Android and iOS apps.
+
 - Company: Money Forward Inc.
   Position: Senior Deep Learning Engineer
   StartDate: 01/2022
-  EndDate: Present
+  EndDate: 03/2023
   Location: Tokyo, Japan
-  First: true   # one must be true to properly display
+  First: false   # one must be true to properly display
   Link: https://moneyforward.com
   Icon: /assets/img/icons/2x/75px_mf.png
   Points:
-      - Designing machine learning systems.
-      - Overseeing the technical aspect of the projects.
-      - Developing deep learning models.
-      - Running tests and experiments.
-      - Increasing the team's technical knowledge and providing growth opportunities to its team members.
+      - Craft cutting-edge machine learning systems for extracting information from documents.
+      - Build robust ML pipelines on AWS.
+      - Develop advanced computer vision models for object detection and OCR using PyTorch.
+      - Share my knowledge and mentor new team members to drive team growth and success.
 
 - Company: Human Resocia Co. Ltd.
   Position: Deep Learning Engineer
@@ -22,13 +34,10 @@
   Link: https://git.resocia.jp/en/
   Icon: /assets/img/icons/2x/75px_Human.png
   Points:
-      - Since 10/2018 dispatched to a Japanese company in an R&D team.
-      - Was responsible for research projects from data labeling to demonstration.
-      - Developed computer vision models using state-of-the-art architectures like EffcientDet, CenterNet, YOLOv3, and Faster R-CNN.
-      - Developed prototype applications using Python, Android, and C++.
-      - Improved model's efficiency to run on CPU and Android mobile devices.
-      - Applied quantization techniques using Pytorch.
-      - Led the evaluation of cutting-edge products of international companies.
+      - Led PoC projects, from data labeling to demonstration, using state-of-the-art models such as EfficientDet, CenterNet, YOLOv3, and Faster R-CNN.
+      - Enhanced inference speed by applying quantization and pruning techniques on various architectures, including CPU, GPU, edge devices, and smartphones.
+      - Utilized multiple runtimes, including TensorRT, PyTorch, ONNX, CoreML, and SNPE, to achieve optimal performance.
+      - Built prototype applications using Python, Swift, Java (Android), and C++.
 
 - Company: Agfa Healthcare GmbH
   Position: Software Developer
