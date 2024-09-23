@@ -6,9 +6,9 @@ date: 2021-06-10
 
 ### Hi, I'm Jose Carlos 👋
 
-I am aSoftware Engineer with over 15 years of experience specialized in Deep Learning technologies. 
+I am a Software Engineer with over 15 years of experience specialized in Deep Learning technologies. 
 
-Through developing solutions across web, backend, frontend, and scripting domains for mobile, desktop, and cloud and instance server platforms, I have cultivated versatility and adaptability in architecting impactful solutions. 
+Through developing solutions across web, backend, frontend, and scripting domains for mobile, desktop, cloud and instance server platforms, I have cultivated versatility and adaptability in architecting impactful solutions. 
 
 With proficiency in languages such as Python, Java, PHP, and CPL (a proprietary language), I am adept at mastering cutting-edge technologies.
 
