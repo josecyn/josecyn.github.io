@@ -18,8 +18,6 @@ card: card-2
 ---
 
 
-# **Canopy Segmentation Using MMSegmentation**
-
 ## **Background**
 In our ongoing efforts to enhance fruit detection through computer vision, we encountered significant challenges related to identifying fruits against diverse backgrounds. Unrelated objects and environmental noise in the images impaired the accuracy and reliability of the detection algorithms. To address this issue, we adopted orchard segmentation techniques aimed at isolating the orchard area from the background, thereby improving the precision and performance of fruit detection systems.
 
@@ -57,7 +55,8 @@ the load_data_list can parse dataset directory Structure:
 │ │ │ │ ├── xxx{seg_map_suffix}
 │ │ │ │ ├── yyy{seg_map_suffix}
 │ │ │ ├── val
-│ │ │ │ ├── zzz{seg_map_suffix}```
+│ │ │ │ ├── zzz{seg_map_suffix}
+```
 
 ### **Model Architecture**
 We chose the Segmenter architecture, which is based on Vision Transformers (ViT). Segmenter has shown state-of-the-art performance in several computer vision tasks, including semantic segmentation. It processes images efficiently, performing segmentation on a single NVIDIA T4 GPU within 0.2 seconds per image (input size: 640x640 pixels).

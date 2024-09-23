@@ -16,8 +16,6 @@ author: Jose
 card: card-3
 ---
 
-# From PyTorch Model to PyTorch Mobile: A Comprehensive Guide
-
 ## Introduction
 
 Deploying PyTorch models on mobile devices often requires optimization due to size and computational constraints. This guide outlines the process of converting a PyTorch model to a PyTorch Mobile model, enabling efficient deployment on mobile platforms.
