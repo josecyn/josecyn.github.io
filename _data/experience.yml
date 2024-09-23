@@ -1,7 +1,7 @@
-- Company: Pregenerate GmbH.
+- Company: Pregenerate GmbH
   Position: Technical Lead
   StartDate: 11/2023
-  EndDate: 10/2024
+  EndDate: 11/2024
   Location: Vienna, Austria
   First: true   # one must be true to properly display
   Link: https://www.pregenerate.net/
@@ -12,7 +12,7 @@
       - Developed Python scripts for lab robot automation and prepared regulatory documentation for IVDR and ISO certifications.
       - Acted as an intermediary between Pregenerate and partner companies to coordinate software-related projects and collaborations.
 
-- Company: Pixofarm GmbH.
+- Company: Pixofarm GmbH
   Position: Senior Deep Learning Engineer
   StartDate: 03/2023
   EndDate: 10/2023
